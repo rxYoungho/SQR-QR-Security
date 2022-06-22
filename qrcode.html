@@ -1,0 +1,71 @@
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<div class="container">
+    <header>
+      <nav>
+        <button type="button"><i data-feather="arrow-left"></i></button>
+        <button type="button"><i data-feather="search"></i></button>
+      </nav>
+    </header>
+    <main>
+      <h1 class="t1">Payment Code</h1>
+      <div class="toggle-group">
+        <input id="today-date" type="radio" name="date-choose">
+        <label for="today-date" class="t4">Check Angle</label>
+        <input id="yesterday-date" type="radio" name="date-choose" checked>
+        <label for="yesterday-date" class="t4">use Barcode</label>
+      </div>
+      <br>
+      <br>
+      <div class="chart">
+        <img src="img/qrcode.png" id="mainPhoto" class="rotate" width="230" height="auto" />
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <button id="btntransactions" class="t4 w-100">Renew QR Code</button>
+    </main>
+    
+  </div>
+  <script>
+    // let images = ['img/qrcode.png','img/qrcode 10.png','img/qrcode 20.png',
+    // 'img/qrcode 30.png','img/qrcode 40.png','img/qrcode 50.png',
+    // 'img/qrcode 60.png','img/qrcode 70.png','img/qrcode 80.png',
+    // 'img/qrcode 90.png','img/qrcode 100.png','img/qrcode 110.png',
+    // 'img/qrcode 120.png','img/qrcode 130.png','img/qrcode 140.png',
+    // 'img/qrcode 150.png','img/qrcode 160.png','img/qrcode 170.png',
+    // 'img/qrcode 180.png','img/qrcode 190.png','img/qrcode 200.png',
+    // 'img/qrcode 210.png','img/qrcode 220.png','img/qrcode 230.png',
+    // 'img/qrcode 240.png','img/qrcode 250.png','img/qrcode 260.png',
+    // 'img/qrcode 270.png','img/qrcode 280.png','img/qrcode 290.png',
+    // 'img/qrcode 300.png','img/qrcode 310.png','img/qrcode 320.png',
+    // 'img/qrcode 330.png','img/qrcode 340.png','img/qrcode 350.png'];
+    let images = [
+    'img/qrcode 320.png', 'img/qrcode 240.png', 'img/qrcode 310.png'
+
+    ]
+
+    let index = 1;
+    const imgElement = document.querySelector('#mainPhoto');
+    console.log(imgElement);
+
+    function change() {
+      
+      if (index != 3){
+        imgElement.src = images[index];
+        console.log(imgElement);
+        index++;
+      }
+      
+      
+    }
+
+    window.onload = function () {
+        setInterval(change, 1500);
+    };
+  </script>
